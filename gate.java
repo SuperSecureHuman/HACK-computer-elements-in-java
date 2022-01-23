@@ -19,15 +19,15 @@ public class gate {
     }
 
     public static int or(int a, int b) {
-        int nota = not(a);
-        int notb = not(b);
+        int nota = nand(a,a);
+        int notb = nand(b,b);
         int out = nand(nota, notb);
         return out;
     }
 
     public static int xor(int a, int b) {
-        int nota = not(a);
-        int notb = not(b);
+        int nota = nand(a,a);
+        int notb = nand(b,b);
         int w1 = and(a, notb);
         int w2 = and(nota, b);
         int out = or(w1, w2);
