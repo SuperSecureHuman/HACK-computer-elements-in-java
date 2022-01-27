@@ -1,11 +1,11 @@
 public class alu {
-    
+
     public static int[] alu16(int[] x, int[] y, int zx, int nx, int zy, int ny, int f, int no) {
-        //Zero x y
+        // Zero x y
         int[] zerosForFalse = new int[16];
         int[] x1 = gate16.mux16(x, zerosForFalse, zx);
         int[] y1 = gate16.mux16(y, zerosForFalse, zy);
-        //not x,y
+        // not x,y
         int[] x2 = gate16.not16(x1);
         int[] x3 = gate16.mux16(x1, x2, nx);
         int[] y2 = gate16.not16(y1);
@@ -21,5 +21,5 @@ public class alu {
         int[] output = gate16.mux16(fo, notf, no);
         return output;
     }
-    
+
 }
