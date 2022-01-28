@@ -12,6 +12,8 @@ public class run {
         int f = 1;
         int no = 1;
         System.out.print("\nThe output is ");
-        System.out.println(Arrays.toString(alu.alu16(x,y,zx,nx,zy,ny,f,no)));
+        System.out.println(Arrays.toString(alu.alu16(x,y,zx,nx,zy,ny,f,no)[2]));
+
+
         }
 }

@@ -1,6 +1,6 @@
 public class alu {
 
-    public static int[] alu16(int[] x, int[] y, int zx, int nx, int zy, int ny, int f, int no) {
+    public static int[][] alu16(int[] x, int[] y, int zx, int nx, int zy, int ny, int f, int no) {
         // Zero x y
         int[] zerosForFalse = new int[16];
         int[] x1 = gate16.mux16(x, zerosForFalse, zx);
@@ -18,7 +18,18 @@ public class alu {
 
         // not f part
         int[] notf = gate16.not16(fo);
-        int[] output = gate16.mux16(fo, notf, no);
+        int[] outputALU = gate16.mux16(fo, notf, no);
+
+        int[] zr = {0};
+        for (int i=0; i<16;i++){
+            if (outputALU[i] == 1);
+                zr[0] = 1;
+        }
+        int[] tru = {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1};
+        int[] temp = gate16.and16(outputALU, tru);
+        int[] ng = {temp[0]};
+
+        int[][] output = {outputALU,zr,ng};
         return output;
     }
 
