@@ -1,4 +1,8 @@
-# This 'Just works'
+# Logic Gates in java - Similar to Nand2Tetris
+
+## This 'Just works'
+
+---
 
 I've just put together bunch of gates together and got the functionality.
 
