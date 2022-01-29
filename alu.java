@@ -13,7 +13,7 @@ public class alu {
 
         // f part
         int[] f0 = gate16.and16(x3, y3);
-        int[] f1 = gate16.add16(x3, y3);
+        int[] f1 = gate16.add16(x3, y3)[0];
         int[] fo = gate16.mux16(f0, f1, f);
 
         // not f part

@@ -45,7 +45,7 @@ public class gate16 {
         return out;
     }
 
-    public static int[] add16(int[] a, int[] b) {
+    public static int[][] add16(int[] a, int[] b) {
         int[] out = new int[16];
         int[] sumCarry15 = gate.halfAdder(a[15], b[15]);
         out[15] = sumCarry15[0];
@@ -79,7 +79,9 @@ public class gate16 {
         out[1] = sumCarry1[0];
         int[] sumCarry0 = gate.fullAdder(a[0], b[0], sumCarry1[1]);
         out[0] = sumCarry0[0];
-        return out;
+        int carry = sumCarry0[1];
+        int[][] output = {out, {carry}};
+        return output;
     }
 
 }

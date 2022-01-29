@@ -34,7 +34,7 @@ public class cpu {
         if (inc == 1)
             
         {
-            output = gate16.add16(in, one);
+            output = gate16.add16(in, one)[0];
             PCValue = output;
         }
         if (load == 1)
