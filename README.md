@@ -21,6 +21,22 @@ int output = gate.CHIP(a,b);
 int[] out = gate16.CHIP(a,b);
 ```
 
+## Usage
+
+Basic gates can be used like shown in the above example
+
+The output of the ALU is in the following format
+
+Its an array of array
+
+    [ [output] , [zr] , [ng] ]
+
+For the CPU, the output is again array of array
+
+    [ [outM], [WriteM], [addressM], [pc] ]
+
+---
+
 ## Known issues
 
 Clocked chips dont work well(?)
