@@ -21,6 +21,10 @@ int output = gate.CHIP(a,b);
 int[] out = gate16.CHIP(a,b);
 ```
 
+---
+
+This additionaly has Carry Select Adder, with block size of 4. This is just supposed to be used for faster implementation of adder.
+
 ## Usage
 
 Basic gates can be used like shown in the above example
