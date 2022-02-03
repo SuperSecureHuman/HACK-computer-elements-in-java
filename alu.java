@@ -20,16 +20,17 @@ public class alu {
         int[] notf = gate16.not16(fo);
         int[] outputALU = gate16.mux16(fo, notf, no);
 
-        int[] zr = {0};
-        for (int i=0; i<16;i++){
-            if (outputALU[i] == 1);
-                zr[0] = 1;
+        int[] zr = { 0 };
+        for (int i = 0; i < 16; i++) {
+            if (outputALU[i] == 1)
+                ;
+            zr[0] = 1;
         }
-        int[] tru = {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1};
+        int[] tru = { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 };
         int[] temp = gate16.and16(outputALU, tru);
-        int[] ng = {temp[0]};
+        int[] ng = { temp[0] };
 
-        int[][] output = {outputALU,zr,ng};
+        int[][] output = { outputALU, zr, ng };
         return output;
     }
 

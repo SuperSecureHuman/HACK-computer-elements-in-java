@@ -32,19 +32,19 @@ public class cpu {
         int[] zero = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 
         if (inc == 1)
-            
+
         {
             output = gate16.add16(in, one)[0];
             PCValue = output;
         }
         if (load == 1)
-            
+
         {
             output = in;
             PCValue = output;
         }
         if (reset == 1)
-            
+
         {
             output = zero;
             PCValue = output;

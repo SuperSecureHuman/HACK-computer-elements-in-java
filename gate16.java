@@ -80,7 +80,7 @@ public class gate16 {
         int[] sumCarry0 = gate.fullAdder(a[0], b[0], sumCarry1[1]);
         out[0] = sumCarry0[0];
         int carry = sumCarry0[1];
-        int[][] output = {out, {carry}};
+        int[][] output = { out, { carry } };
         return output;
     }
 
