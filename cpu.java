@@ -26,31 +26,27 @@ public class cpu {
         return output;
     }
 
-    public static int[] PC(int[] in, int load, int inc, int reset) {
-        int[] output = PCValue;
-        int[] one = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 };
-        int[] zero = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
-
-        if (inc == 1)
-
-        {
-            output = gate16.add16(in, one)[0];
-            PCValue = output;
-        }
-        if (load == 1)
-
-        {
-            output = in;
-            PCValue = output;
-        }
-        if (reset == 1)
-
-        {
-            output = zero;
-            PCValue = output;
-        }
-        return output;
-    }
+    // public static int[] PC(int[] in, int load, int inc, int reset) {
+    // int[] output = PCValue;
+    // int[] one = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 };
+    // int[] zero = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+    //
+    // if (reset == 1) {
+    // output = zero;
+    // PCValue = output;
+    // }
+    //
+    // else if (load == 1) {
+    // output = in;
+    // PCValue = output;
+    // }
+    //
+    // else if (inc == 1) {
+    // output = gate16.add16(in, one)[0];
+    // PCValue = output;
+    // }
+    // return output;
+    // }
 
     /*
      * // get type of instruction
@@ -194,7 +190,7 @@ public class cpu {
 
         // PC(in=Aout, inc=PCinc, load=PCload, reset=reset, out[0..14]=pc);
 
-        int[] pcOUT = PC(Aout, PCinc, PCload, reset);
+        int[] pcOUT = programCounter.pc(Aout, PCinc, PCload, reset);
         pc = Arrays.copyOfRange(pcOUT, 1, 16);
 
         int[] WriteM = { 0 };
