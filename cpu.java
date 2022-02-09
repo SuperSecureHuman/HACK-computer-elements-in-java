@@ -4,7 +4,6 @@ public class cpu {
 
     public static int[] ARegisterValue = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
     public static int[] DRegisterValue = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
-    public static int[] PCValue = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 
     public static int[] ARegister(int[] in, int load) {
         int[] output = {};
@@ -26,72 +25,6 @@ public class cpu {
         return output;
     }
 
-    // public static int[] PC(int[] in, int load, int inc, int reset) {
-    // int[] output = PCValue;
-    // int[] one = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 };
-    // int[] zero = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
-    //
-    // if (reset == 1) {
-    // output = zero;
-    // PCValue = output;
-    // }
-    //
-    // else if (load == 1) {
-    // output = in;
-    // PCValue = output;
-    // }
-    //
-    // else if (inc == 1) {
-    // output = gate16.add16(in, one)[0];
-    // PCValue = output;
-    // }
-    // return output;
-    // }
-
-    /*
-     * // get type of instruction
-     * Not(in=instruction[15], out=Ainstruction);
-     * Not(in=Ainstruction, out=Cinstruction);
-     * 
-     * And(a=Cinstruction, b=instruction[5], out=ALUtoA); // C-inst and dest to
-     * A-reg
-     * Mux16(a=instruction, b=ALUout, sel=ALUtoA, out=Aregin);
-     * 
-     * Or(a=Ainstruction, b=ALUtoA, out=loadA); // load A if A-inst or C-inst&dest
-     * to A-reg
-     * ARegister(in=Aregin, load=loadA, out=Aout);
-     * 
-     * Mux16(a=Aout, b=inM, sel=instruction[12], out=AMout); // select A or M based
-     * on a-bit
-     * 
-     * And(a=Cinstruction, b=instruction[4], out=loadD);
-     * DRegister(in=ALUout, load=loadD, out=Dout); // load the D register from ALU
-     * 
-     * ALU(x=Dout, y=AMout, zx=instruction[11], nx=instruction[10],
-     * zy=instruction[9], ny=instruction[8], f=instruction[7],
-     * no=instruction[6], out=ALUout, zr=ZRout, ng=NGout); // calculate
-     * 
-     * // Set outputs for writing memory
-     * Or16(a=false, b=Aout, out[0..14]=addressM);
-     * Or16(a=false, b=ALUout, out=outM);
-     * And(a=Cinstruction, b=instruction[3], out=writeM);
-     * 
-     * // calc PCload & PCinc - whether to load PC with A reg
-     * And(a=ZRout, b=instruction[1], out=jeq); // is zero and jump if zero
-     * And(a=NGout, b=instruction[2], out=jlt); // is neg and jump if neg
-     * Or(a=ZRout, b=NGout, out=zeroOrNeg);
-     * 
-     * Not(in=zeroOrNeg, out=positive); // is positive (not zero and not neg)
-     * And(a=positive, b=instruction[0], out=jgt); // is pos and jump if pos
-     * Or(a=jeq, b=jlt, out=jle);
-     * Or(a=jle, b=jgt, out=jumpToA); // load PC if cond met and jump if cond
-     * 
-     * And(a=Cinstruction, b=jumpToA, out=PCload); // Only jump if C instruction
-     * Not(in=PCload, out=PCinc); // only inc if not load
-     * 
-     * PC(in=Aout, inc=PCinc, load=PCload, reset=reset, out[0..14]=pc);
-     * 
-     */
     public static int[][] CPU(int[] inM, int[] instruction, int reset) {
         int[] outM = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
         int writeM = 0;
