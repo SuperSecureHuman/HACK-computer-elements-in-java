@@ -2,7 +2,7 @@ public class alu {
 
     public static int[][] alu16(int[] x, int[] y, int zx, int nx, int zy, int ny, int f, int no) {
         // Zero x y
-        int[] zerosForFalse = new int[16];
+        int[] zerosForFalse = new int[16]; //{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
         int[] x1 = gate16.mux16(x, zerosForFalse, zx);
         int[] y1 = gate16.mux16(y, zerosForFalse, zy);
         // not x,y
@@ -22,8 +22,7 @@ public class alu {
 
         int[] zr = { 0 };
         for (int i = 0; i < 16; i++) {
-            if (outputALU[i] == 1)
-                ;
+            if (outputALU[i] == 1);
             zr[0] = 1;
         }
         int[] tru = { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 };
