@@ -74,7 +74,7 @@ public class cpu {
          */
 
         int[][] aluOutput = alu.alu16(Dout, AMout, instruction[4], instruction[5], instruction[6], instruction[7],
-                instruction[8], instruction[7]);
+                instruction[8], instruction[9]);
         ALUout = aluOutput[0];
         int ZRout = aluOutput[1][0];
         int NGout = aluOutput[2][0];
