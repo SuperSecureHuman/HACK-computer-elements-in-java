@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class run {
+public class ALU_Test {
 
     public static void main(String[] args) {
         int[] x = new int[] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1 };
