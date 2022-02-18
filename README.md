@@ -45,9 +45,6 @@ For the CPU, the output is again array of array
 
 Clocked chips dont work well(?)
 
-* I am not exactly sure why PC outputs other values. I just ported the HDL code from nand2tetris into java. The output of CPU works fine. (unless it is supposed to be negative, see next issue)
-
-This dosent follow signed bit representation (but Nand2Tetris, takes signed bit by default for multibit stuff. You effecively have only 15bits to work with, and one bit is left for sign)
 
 ---
 
